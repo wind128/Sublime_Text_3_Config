@@ -1,0 +1,151 @@
+Sublime Text 3 Build 3065 配置日志
+
+2014年10月15日
+
+1、安装 Sublime Package Control		http://my.oschina.net/sub/blog/160723
+
+原来Sublime text 3安装Package Control很麻烦，现在简单的方法来了. 
+使用Ctrl+`快捷键或者通过View->Show Console菜单打开命令行，粘贴如下代码：
+
+import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); 
+urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); 
+open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+
+重启Sublime Text 3
+-----------------------------------------------------------------------------------------------------------------------
+
+2、font face	Sublime Text 中的字体设置 	http://uecss.com/sublime-text-2-font-family-setting.html
+
+在菜单 Preferences 下找到 Settings – User 点击会打开Preferences.sublime-settings这个文件
+将其中的 font_face 后修改添加想要的设置字体（如果没有font_face自行添加这一行注意英文”,”逗号隔开），
+设置代码片段示例如下：
+
+{
+    "color_scheme": "Packages/Color Scheme - Default/Mongrl.tmTheme",
+    "font_face": "YaHei Consolas Hybrid",
+    "font_size": 10.5
+}
+
+注：第一行color_scheme为代码配色，不需要更改。
+-----------------------------------------------------------------------------------------------------------------------
+
+3、ConvertToUTF8 使Sublime Text支持除UTF8外多种编码		https://github.com/seanliang/ConvertToUTF8
+
+其实也不是真的支持其他编码，更准确的应该说是把除UTF8编码之外的其他编码在Sublime Text中转换称UTF8编码，但是在保存的时候
+还是原来的那个编码，从在打开该文件的时候一开始显示的乱码，然后一刹那又自动显示出正常的字体可以看出，当然，在保存文件之
+后发现其编码还是原来的那个的。
+-----------------------------------------------------------------------------------------------------------------------
+
+4、BracketHighlighter 高亮显示匹配的括号、引号和标签	https://github.com/facelessuser/BracketHighlighter/tree/BH2ST3
+
+这个插件能在左侧高亮显示匹配的括号、引号和标签，能匹配的 [] ,  () ,  {} ,  "",  '' ,  <tag></tag>等甚至是自定义的标签，
+当看到密密麻麻的代码分不清标签之间包容嵌套的关系时，这款插件就能很好地帮你理清楚代码结构，快速定位括号，引号和标签内的
+范围。
+-----------------------------------------------------------------------------------------------------------------------
+
+5、LESS		https://github.com/danro/LESS-sublime
+
+LESS语法高亮显示
+-----------------------------------------------------------------------------------------------------------------------
+
+6、sublime-less2css		https://github.com/timdouglas/sublime-less2css
+
+安装后从https://github.com/duncansmart/less.js-windows下载less.js-windows，然后配置less.js-windows的环境变量。
+-----------------------------------------------------------------------------------------------------------------------
+
+7、Emmet	https://github.com/sergeche/emmet-sublime
+
+安装后要注意PyV8(包含文件有：_PyV8.pyd,config.json,PyV8.py)插件一定要安装成功，否则emmet不可用！
+如果Sublime Text自动安装PyV8不成功，可下载其安装包 https://github.com/emmetio/pyv8-binaries
+-----------------------------------------------------------------------------------------------------------------------
+
+8、Tag		https://github.com/sublimetext/tag		ST3安装后没有右键功能
+
+html,php格式化		右键选择Auto-Format Tags on Document，或在选中的代码段上点右键，选择Auto-Format Tags on Selection
+-----------------------------------------------------------------------------------------------------------------------
+
+9、JsFormat		https://github.com/jdc0589/jsformat
+
+JavaScript格式化		右键选择JsFormat
+-----------------------------------------------------------------------------------------------------------------------
+
+10、ColorHighlighter		https://github.com/Monnoroch/ColorHighlighter
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+10、ColorPicker 调色盘		https://github.com/weslly/ColorPicker	没有安装成功
+
+在编辑CSS样式的时候，要加个自己喜欢颜色或改改颜色啥的，要到PS里去调色？ColorPicker可以让sublime text 3内置一个调色盘，
+调好颜色，点击OK就会在光标处生成十六进制颜色代码。
+
+ctrl+shift+c
+-----------------------------------------------------------------------------------------------------------------------
+
+11、CSScomb	CSS属性排序	For Text 2 & 3		https://github.com/csscomb/CSScomb-for-Sublime	没有安装成功
+
+有时候看看自己写的CSS文件，会不会觉得属性很乱查找不易维护难？CSScomb可以按照一定的CSS属性排序规则，将杂乱无章的CSS属性
+进行重新排序。选中要排序的CSS代码，按Ctrl+Shift+C，即可对CSS属性重新排序了，代码从此简洁有序易维护，如果不款选代码则插
+件将排序文件中所有的CSS属性。当然，可以自己自定义CSS属性排序规则，打开插件目录里的CSScomb.sublime-settings文件，更改里
+面的CSS属性顺序就行了。因为这个插件使用PHP写的，要使他工作需要在环境变量中添加PHP的路径，具体请看github上的说明。 
+-----------------------------------------------------------------------------------------------------------------------
+
+12、compact expand css command	CSS属性展开收缩		https://gist.github.com/2863474		
+													https://github.com/TooBug/CompactExpandCss
+
+每个人写CSS都有不同的风格，有些人喜欢写成一行，有些人喜欢写成多行，各有各的好处，我倒喜欢将CSS写成一行，这样能减少CSS文
+件大小，且屏幕能显示更多的Class方便查找。如果阅读别人的代码不符合自己的习惯，可以用CSS Compact Expand这个插件将CSS格式化
+一下，按 ctrl+alt+[ 收缩CSS代码为一行显示，按 ctrl+alt+] 展开CSS代码为多行显示，(此插件由sublime text QQ群里一个牛人封装。) 
+-----------------------------------------------------------------------------------------------------------------------
+
+13、soda-theme		https://github.com/buymeasoda/soda-theme
+
+Soda Theme 是最受欢迎的 Sublime Text 主题。
+安装后你还需要在你的配置文件（菜单 Preferences -> Settings - User）中加入 "theme": "Soda Light.sublime-theme" 或 
+"theme": "Soda Dark.sublime-theme"。要达到图中的效果，你还需要下载与之搭配的 color scheme。
+http://buymeasoda.github.com/soda-theme/extras/colour-schemes.zip
+如果你喜欢 Soda Dark 和 Monokai，我建议你使用 Monokai Extended (GitHub)。这个 color scheme 是 Monokai Soda 的增强，
+如果再配合 Markdown Extended (GitHub)，将大大改善 Markdown 的语法高亮。
+-----------------------------------------------------------------------------------------------------------------------
+
+14、TortoiseSVN(win下需要安装有TortoiseSVN客户端支持)
+
+搜索TortoiseSVN显示以后直接回车，安装。然后修改配置文件。
+Preferences-->Package Setting--->TortoiseSVN-->Setting - Default 
+配置代码
+{   
+    // Auto close update dialog when no errors, conflicts and merges   
+    "autoCloseUpdateDialog": false,   
+    "tortoiseproc_path": "D:\\Program Files\\TortoiseSVN\\bin\\TortoiseProc.exe" //修改为自己的文件所在地址   
+}  
+安装以后可以直接在文件目录或者文件编辑中右键来提交和更新文件了。
+快捷键 alt+c 提交 ，alt+u 更新
+-----------------------------------------------------------------------------------------------------------------------
+
+15、SublimeTmpl		快速生成文件模板	https://github.com/kairyou/SublimeTmpl
+
+一直都很奇怪为什么sublime text 3没有新建文件模板的功能，像html头部的DTD声明每次都要复制粘贴。用SublimeTmpl这款插件终于
+可以解脱了，SublimeTmpl能新建html、css、javascript、php、python、ruby六种类型的文件模板，所有的文件模板都在插件目录的
+templates文件夹里，可以自定义编辑文件模板。
+SublimeTmpl默认的快捷键
+ctrl+alt+h 			html
+ctrl+alt+j 			javascript
+ctrl+alt+c 			css
+ctrl+alt+p 			php
+ctrl+alt+r 			ruby 
+ctrl+alt+shift+p	python
+如果想要新建其他类型的文件模板的话，先自定义文件模板放在templates文件夹里，再分别打开Default (Windows).sublime-keymap、
+Default.sublime-commands、Main.sublime-menu、SublimeTmpl.sublime-settings这四个文件照着里面的格式自定义想要新建的类型，
+这里就详细介绍了，请各位自己折腾哈~
+-----------------------------------------------------------------------------------------------------------------------
+
+16、Alignment 等号对齐	https://github.com/kevinsperrine/sublime_alignment
+
+按Ctrl+Alt+A（与QQ截图冲突），可以将凌乱的代码以等号为准左右对其，适合有代码洁癖的朋友。
+-----------------------------------------------------------------------------------------------------------------------
+
+17、SideBarEnhancements		https://github.com/titoBouzout/SideBarEnhancements/tree/st3
+
+这个插件可以给Sublime Text的边栏菜单带来扩充的功能，包括：在当前工程文件夹中新建文件，移动文件或文件夹，产生文件或文件
+夹的副本，在新窗口或浏览器中打开，刷新等。这只是概括地说，安装后探索它更多的功能吧。
+-----------------------------------------------------------------------------------------------------------------------
